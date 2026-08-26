@@ -470,6 +470,36 @@ function draw(){
   t++;requestAnimationFrame(draw);
 }
 resize();initP();draw();window.addEventListener("resize",function(){resize();initP();});
+var cfForm=document.getElementById("cf-form");
+if(cfForm){
+cfForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  var statusEl=document.getElementById("cf-status");
+  var btn=document.getElementById("cf-submit");
+  btn.disabled=true;
+  statusEl.className="cf-status";
+  statusEl.textContent="Sending...";
+  var data=new FormData(cfForm);
+  fetch("https://formspree.io/f/mvkpelyw",{
+    method:"POST",
+    body:data,
+    headers:{"Accept":"application/json"}
+  }).then(function(res){
+    if(res.ok){
+      statusEl.textContent="Thanks — your message has been sent!";
+      cfForm.reset();
+    }else{
+      statusEl.className="cf-status err";
+      statusEl.textContent="Something went wrong — please try again.";
+    }
+    btn.disabled=false;
+  }).catch(function(){
+    statusEl.className="cf-status err";
+    statusEl.textContent="Something went wrong — please try again.";
+    btn.disabled=false;
+  });
+});
+}
 function openPanel(id){document.querySelectorAll(".overlay.active").forEach(function(o){o.classList.remove("active");});var el=document.getElementById("panel-"+id);if(el){el.classList.add("active");document.body.classList.add("panel-open");}}
 function closePanel(id){var el=document.getElementById("panel-"+id);if(el)el.classList.remove("active");document.body.classList.remove("panel-open");}
 document.querySelectorAll("[data-panel]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();openPanel(this.getAttribute("data-panel"));});});
