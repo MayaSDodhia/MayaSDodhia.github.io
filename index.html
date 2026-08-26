@@ -76,6 +76,16 @@ nav ul a:hover{color:var(--bi)}
 .cll{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:300;color:var(--s-text);transition:color .25s}
 .cls{font-family:"DM Mono",monospace;font-size:.6rem;color:var(--s-dim);letter-spacing:.1em}
 .arr{font-size:1rem;color:var(--s-dim);transition:color .25s}
+.cf-field{margin-bottom:1.2rem}
+.cf-field label{display:block;font-family:"DM Mono",monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--s-mid);margin-bottom:.5rem}
+.cf-field input,.cf-field textarea{width:100%;background:var(--s-card);border:1px solid var(--s-border);color:var(--sa);font-family:"Instrument Sans",sans-serif;font-size:.95rem;padding:.8rem 1rem;border-radius:2px;cursor:auto}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--bi)}
+.cf-field textarea{resize:vertical;min-height:140px}
+.cf-submit{font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.8rem;background:none;border:1px solid var(--bi);color:var(--bi);cursor:none;transition:all .25s}
+.cf-submit:hover{background:var(--bi);color:var(--ab)}
+.cf-submit:disabled{opacity:.5;cursor:none}
+.cf-status{margin-top:1rem;font-size:.85rem;color:var(--s-mid)}
+.cf-status.err{color:var(--ru)}
 footer{position:relative;z-index:1;border-top:1px solid var(--s-border);padding:1.8rem 2rem;display:flex;justify-content:space-between;align-items:center}
 footer p{font-family:"DM Mono",monospace;font-size:.6rem;letter-spacing:.1em;color:var(--s-dim);text-transform:uppercase}
 .overlay{position:fixed;inset:0;z-index:300;opacity:0;pointer-events:none;transition:opacity .4s ease;display:flex;flex-direction:column}
