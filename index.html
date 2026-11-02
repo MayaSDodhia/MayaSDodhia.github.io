@@ -176,7 +176,7 @@ a.pc:hover .pabs{display:block}
 .artxt em{font-style:italic;color:var(--sd)}
 #lightbox{position:fixed;inset:0;z-index:500;background:rgba(4,9,18,.96);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
 #lightbox.active{opacity:1;pointer-events:all}
-#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid var(--cu)}
+#lightbox img{width:min(90vw,1100px);height:min(85vh,800px);object-fit:contain;border:1px solid var(--cu);background:#000}
 #lightbox-close{position:absolute;top:1.4rem;right:2rem;font-family:"DM Mono",monospace;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--cu);padding:.45rem .9rem;cursor:none;transition:color .2s,border-color .2s}
 #lightbox-close:hover{color:var(--bi);border-color:var(--bi)}
 @media(max-width:750px){.hero-inner{grid-template-columns:1fr;gap:2rem}.hero-img{display:none}.cards{grid-template-columns:1fr 1fr}.skills-cols{grid-template-columns:1fr}.ag,.ig{grid-template-columns:1fr;gap:2rem}.rg{grid-template-columns:1fr}.sg{grid-template-columns:1fr 1fr}.sg2{grid-template-columns:1fr}.artg{grid-template-columns:1fr 1fr}.collab-grid{grid-template-columns:1fr 1fr}.conf-item,.teach-item{grid-template-columns:1fr;gap:.25rem}nav{padding:1rem 1.2rem}nav ul{gap:1rem}}
