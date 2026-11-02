@@ -98,8 +98,10 @@ footer p{font-family:"DM Mono",monospace;font-size:.6rem;letter-spacing:.1em;col
 .overlay.active{opacity:1;pointer-events:all}
 .overlay-bg{position:absolute;inset:0;background:rgba(5,11,20,.97);backdrop-filter:blur(14px)}
 .overlay-inner{position:relative;z-index:1;height:100%;overflow-y:auto;padding:5rem 2rem 4rem;max-width:960px;margin:0 auto;width:100%}
-.overlay-close{position:fixed;top:1.3rem;right:2rem;z-index:400;font-family:"DM Mono",monospace;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--cu);padding:.45rem .9rem;cursor:none;transition:color .2s,border-color .2s}
-.overlay-close:hover{color:var(--bi);border-color:var(--bi)}
+.overlay-close{position:fixed;top:1.2rem;right:2rem;z-index:400;display:flex;align-items:center;gap:.6rem;font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ab);background:var(--bi);border:1px solid var(--bi);border-radius:2px;padding:.6rem 1.1rem;cursor:none;box-shadow:0 0 18px rgba(79,195,161,.35);transition:background .2s,color .2s,box-shadow .2s}
+.overlay-close:hover,.overlay-close:focus-visible{background:transparent;color:var(--bi);box-shadow:0 0 24px rgba(79,195,161,.5);outline:none}
+.overlay-close .esc{font-size:.55rem;opacity:.7;border:1px solid currentColor;border-radius:2px;padding:.05rem .3rem}
+@media(max-width:750px){.overlay-close .esc{display:none}.overlay-close{right:1rem;top:1rem}}
 .lbl{font-family:"DM Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bi);margin-bottom:.9rem}
 h2{font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:300;color:var(--sa);line-height:1.2;margin-bottom:1.8rem}
 h2 em{font-style:italic}
@@ -182,7 +184,7 @@ a.pc:hover .pabs{display:block}
 @keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 </style></head><body>
 <canvas id="cvs"></canvas><div id="cur"></div>
-<div id="lightbox"><button id="lightbox-close">Close &times;</button><img id="lightbox-img" src="" alt=""/></div>
+<div id="lightbox"><button id="lightbox-close">&larr; Back to home <span class="esc">Esc</span></button><img id="lightbox-img" src="" alt=""/></div>
 <nav><a class="nl" href="#">Dr. Maya S. Dodhia</a><ul>
 <li><a href="#" data-panel="about">About</a></li>
 <li><a href="#" data-panel="ski">Skills</a></li>
@@ -265,7 +267,7 @@ a.pc:hover .pabs{display:block}
 <a href="https://researchprofiles.ku.dk/da/persons/maya-dodhia" target="_blank" class="clr"><div><p class="cll">KU Research Profile</p><p class="cls">POSTH Lab &middot; University of Copenhagen</p></div><span class="arr">&rarr;</span></a>
 </div></div>
 <div class="overlay" id="panel-contact"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="contact">Close &times;</button>
+<button class="overlay-close" data-close="contact">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Get in Touch</p><h2>Send a message<br><em>directly to my inbox</em></h2>
 <p style="max-width:480px;color:var(--s-text);font-size:1rem;line-height:1.8;margin-bottom:2rem">Fill in the form below and it'll come straight through to me.</p>
@@ -279,7 +281,7 @@ a.pc:hover .pabs{display:block}
 </div></div>
 <footer><p>Dr. Maya S. Dodhia &middot; Marine Geomicrobiologist</p><p>Copenhagen, Denmark</p></footer>
 <div class="overlay" id="panel-about"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="about">Close &times;</button>
+<button class="overlay-close" data-close="about">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Background</p><h2>A geologist who followed<br><em>microbes into the sea</em></h2>
 <div class="ag"><div class="at">
@@ -304,7 +306,7 @@ a.pc:hover .pabs{display:block}
 </div>
 </div></div>
 <div class="overlay" id="panel-ski"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="ski">Close &times;</button>
+<button class="overlay-close" data-close="ski">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Capabilities</p><h2>Technical &amp; <em>Professional Skills</em></h2>
 <div class="sg">
@@ -342,7 +344,7 @@ a.pc:hover .pabs{display:block}
 </div>
 </div></div>
 <div class="overlay" id="panel-industry"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="industry">Close &times;</button>
+<button class="overlay-close" data-close="industry">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Where I Can Contribute</p><h2>From ocean science<br><em>to applied impact</em></h2>
 <div class="ig">
@@ -373,7 +375,7 @@ a.pc:hover .pabs{display:block}
 </div>
 </div></div>
 <div class="overlay" id="panel-res"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="res">Close &times;</button>
+<button class="overlay-close" data-close="res">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Research Focus</p><h2>Plastisphere science at the<br><em>frontier of marine pollution</em></h2>
 <div class="rg">
@@ -411,7 +413,7 @@ a.pc:hover .pabs{display:block}
 </div><div style="margin-top:1.4rem"><a href="https://orcid.org/0000-0001-5227-7026" target="_blank" class="btn bg">Full record on ORCID &rarr;</a></div>
 </div></div>
 <div class="overlay" id="panel-conf"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="conf">Close &times;</button>
+<button class="overlay-close" data-close="conf">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Conferences &amp; Professional Engagement</p><h2>Presenting research,<br><em>building networks</em></h2>
 <div class="conf-list">
@@ -433,7 +435,7 @@ a.pc:hover .pabs{display:block}
 </div>
 </div></div>
 <div class="overlay" id="panel-art"><div class="overlay-bg"></div>
-<button class="overlay-close" data-close="art">Close &times;</button>
+<button class="overlay-close" data-close="art">&larr; Back to home <span class="esc">Esc</span></button>
 <div class="overlay-inner">
 <p class="lbl">Outside the Lab</p><h2>White acrylic on black &mdash;<br><em>painting the animals I want to protect</em></h2>
 <p class="artxt">I paint with white acrylic on black paper &mdash; almost always big cats, although I have recently ventured into oil painting too. There is something about working white on black that conveys the emotions more: you are pulling light out of darkness, creating space for you to feel whatever emotions you need. <em>I am drawn to wildlife the same way I am drawn to the ocean &mdash; I am fascinated by it all, and want to work towards protecting and conserving it all.</em></p>
@@ -516,14 +518,39 @@ cfForm.addEventListener("submit",function(e){
   });
 });
 }
-function openPanel(id){document.querySelectorAll(".overlay.active").forEach(function(o){o.classList.remove("active");});var el=document.getElementById("panel-"+id);if(el){el.classList.add("active");document.body.classList.add("panel-open");}}
-function closePanel(id){var el=document.getElementById("panel-"+id);if(el)el.classList.remove("active");document.body.classList.remove("panel-open");}
+function openPanel(id,fromHistory){
+  document.querySelectorAll(".overlay.active").forEach(function(o){o.classList.remove("active");});
+  var el=document.getElementById("panel-"+id);
+  if(el){
+    el.classList.add("active");document.body.classList.add("panel-open");
+    el.querySelector(".overlay-inner").scrollTop=0;
+    if(!fromHistory)history.pushState({panel:id},"","#"+id);
+  }
+}
+function closePanel(id,fromHistory){
+  document.querySelectorAll(".overlay.active").forEach(function(o){o.classList.remove("active");});
+  document.body.classList.remove("panel-open");
+  if(!fromHistory&&history.state&&history.state.panel)history.back();
+}
+window.addEventListener("popstate",function(e){
+  if(e.state&&e.state.panel)openPanel(e.state.panel,true);else closePanel(null,true);
+});
+if(location.hash){var h=location.hash.slice(1);if(document.getElementById("panel-"+h))openPanel(h,true);}
 document.querySelectorAll("[data-panel]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();openPanel(this.getAttribute("data-panel"));});});
 document.querySelectorAll("[data-close]").forEach(function(el){el.addEventListener("click",function(){closePanel(this.getAttribute("data-close"));});});
-document.querySelectorAll(".overlay-bg").forEach(function(bg){bg.addEventListener("click",function(){var o=this.closest(".overlay");if(o){o.classList.remove("active");document.body.classList.remove("panel-open");}});});
-document.addEventListener("keydown",function(e){if(e.key==="Escape"){document.querySelectorAll(".overlay.active").forEach(function(o){o.classList.remove("active");});document.body.classList.remove("panel-open");document.getElementById("lightbox").classList.remove("active");}});
+document.querySelectorAll(".overlay-bg").forEach(function(bg){bg.addEventListener("click",function(){closePanel();});});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(document.getElementById("lightbox").classList.contains("active")){document.getElementById("lightbox").classList.remove("active");}else{closePanel();}}});
 var lb=document.getElementById("lightbox"),lbImg=document.getElementById("lightbox-img");
 document.querySelectorAll(".af[data-lightbox]").forEach(function(af){af.addEventListener("click",function(){var img=this.querySelector("img");if(img){lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add("active");}});});
 document.getElementById("lightbox-close").addEventListener("click",function(){lb.classList.remove("active");});
 lb.addEventListener("click",function(e){if(e.target===lb)lb.classList.remove("active");});
+document.querySelectorAll(".overlay").forEach(function(o){
+  var id=o.id.replace("panel-","");
+  var b=document.createElement("button");
+  b.className="btn bg";
+  b.style.marginTop="3rem";
+  b.innerHTML="&larr; Back to home";
+  b.addEventListener("click",function(){closePanel(id);});
+  o.querySelector(".overlay-inner").appendChild(b);
+});
 })()</script></body></html>
